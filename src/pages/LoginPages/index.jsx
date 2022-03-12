@@ -5,17 +5,15 @@ import { AuthContext } from '../../contexts/auth';
 import './styles.css';
 
 function LoginPage() {
-    const { authenticated, login } = useContext(AuthContext);
+    const { login } = useContext(AuthContext);
 
     const [email, setEmail] = useState('');
     const [password, setpassword] = useState('');
-    const [tried, setTried] = useState(false);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
 
         login(email, password); //integracao com contexto / api
-        setTried(true);
     };
 
     return (
